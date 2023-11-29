@@ -70,7 +70,7 @@ app.post('/users', async (req,res)=>{
     const expirationTime = Date.now() + EXPIRATION_TIME;
     const linkWithExpiration = `${link}&expires=${expirationTime}`;
 
-    transporter.sendMail({ ...mailOptions, to:payload.email,text: `Hi Hello, please verify Your email ${linkWithExpiration}---The link expires with in 1 minutes` })
+    transporter.sendMail({ ...mailOptions, to:payload.email,text: `Hi Hello, please verify Your email ${linkWithExpiration} The link expires with in 1 minutes` })
 
     const response =Appuser.toObject();
     res.send(response)
