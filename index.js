@@ -52,7 +52,15 @@ app.post('/users', async (req,res)=>{
     } 
   });
 
-
+  app.get('/users',  async(req,res)=>{
+    try{
+       res.send(await usermodel.find());
+    }
+    catch(err){
+      console.log(err);
+      res.status(500).send('Internal Server Error');
+    } 
+  });
 
   app.post('/login', async (req,res)=>{
     try{
