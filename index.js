@@ -52,7 +52,7 @@ app.post('/users', async (req,res)=>{
     } 
   });
 
-  app.get('/users',  async(req,res)=>{
+  app.get('/',  async(req,res)=>{
     try{
        res.send(await usermodel.find());
     }
